@@ -118,6 +118,7 @@ namespace Sistemalanchonete
         private void iconButton3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColor.color3);
+            OpenChildForm(new Form4());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)

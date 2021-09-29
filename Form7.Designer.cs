@@ -63,6 +63,7 @@ namespace Sistemalanchonete
             this.buttonClienteLogin.TabIndex = 25;
             this.buttonClienteLogin.Text = "Entrar";
             this.buttonClienteLogin.UseVisualStyleBackColor = true;
+            this.buttonClienteLogin.Click += new System.EventHandler(this.buttonClienteLogin_Click);
             // 
             // Form7
             // 

@@ -12,22 +12,43 @@ namespace Sistemalanchonete
 {
     public partial class Form5 : Form
     {
+        Banco x = new Banco();
+        List<Banco> dados = new List<Banco>();
         public Form5()
         {
             InitializeComponent();
         }
-
-        private void buttonCadastrar_Click(object sender, EventArgs e)
+        public void CarregarDados()
         {
-            this.Hide();
-            Form2 k = new Form2();
-            k.Closed += (s, args) => this.Close();
-            k.Show();
+            x.Id = int.Parse(textID.Text);
+            x.Nome = textNome.Text;
+            x.Telefone = maskedtextTelefone.Text;
+            x.Senha = textSenhaCadastro.Text;
+            dados.Add(x);
         }
+
 
         private void buttonLoginatend_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seja Bem Vindo(a) \n" + textusuario.Text);
+            if (textusuario == textNome && textSenhaLogin == textSenhaCadastro)
+            {
+                MessageBox.Show("Seja Bem Vindo(a)");
+            }
+            else
+            {
+                MessageBox.Show("Usuario ou Senha Incorreto \n !Tente Novamente!");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CarregarDados();
+
+
+            if (x.SalvarDados(dados, @"C:/Bd/BdBanco.Joson"))
+            {
+                MessageBox.Show("Dados cadastrados com sucesso!");
+            }
         }
     }
 }

@@ -17,14 +17,12 @@ namespace Sistemalanchonete
             InitializeComponent();
         }
 
-        private void buttonAtendenteLogin_Click(object sender, EventArgs e)
+        private void buttonClienteLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form1 f = new Form1();
             f.Closed += (s, args) => this.Close();
             f.Show();
         }
-
-        
     }
 }
